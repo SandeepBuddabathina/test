@@ -1,0 +1,83 @@
+<!-- app.component.html -->
+<div class=".container-fluid mt-4 mx-4 ">
+    <h2 class="mb-4 text-center fw-bold">REGISTRATION</h2>
+  
+    <!-- Form Start -->
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+      <!-- Name Field -->
+      <div class="form-group mb-3">
+        <label for="name">Name:</label>
+        <input
+          type="text"
+          id="name"
+          class="form-control"
+          formControlName="name"
+        />
+        <div *ngIf="userForm.get('name')?.invalid && userForm.get('name')?.touched" class="text-danger">
+          Name is required.
+        </div>
+      </div>
+  
+      <!-- Email Field -->
+      <div class="form-group mb-3">
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          class="form-control"
+          formControlName="email"
+        />
+        <div *ngIf="userForm.get('email')?.invalid && userForm.get('email')?.touched" class="text-danger">
+          Enter a valid email.
+        </div>
+      </div>
+
+      <!-- Mobile Number Field -->
+      <div class="form-group mb-3">
+        <label for="email">Mobile Number:</label>
+        <input
+          type="number"
+          id="mobile"
+          class="form-control"
+          formControlName="mobile"
+        />
+        <div *ngIf="userForm.get('mobile')?.invalid && userForm.get('mobile')?.touched" class="text-danger">
+          Enter a valid Mobile Number.
+        </div>
+      </div>
+  
+      <!-- Password Field -->
+      <div class="form-group mb-3">
+        <label for="email">Password:</label>
+        <input
+          type="password"
+          id="password"
+          class="form-control"
+          formControlName="password"
+        />
+        <div *ngIf="userForm.get('password')?.invalid && userForm.get('password')?.touched" class="text-danger">
+          Enter a valid Password.
+        </div>
+      </div>
+
+      <!-- Re-type Password Field -->
+      <div class="form-group mb-3">
+        <label for="email">Retype Password:</label>
+        <input
+          type="password"
+          id="confirmpassword"
+          class="form-control"
+          formControlName="confirmpassword"
+        />
+        <div *ngIf="userForm.get('confirmpassword')?.invalid && userForm.get('confirmpassword')?.touched" class="text-danger">
+          Enter a valid retype password.
+        </div>
+      </div>
+  
+      <!-- Submit Button -->
+      <button type="submit" class="btn btn-primary" [disabled]="userForm.invalid">
+        Submit
+      </button>
+    </form>
+  </div>
+  

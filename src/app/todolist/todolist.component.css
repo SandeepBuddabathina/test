@@ -1,0 +1,9 @@
+.right{
+    float:right;
+}
+.strike {
+    text-decoration: line-through;
+    color: gray;
+    
+  }
+  

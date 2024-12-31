@@ -1,0 +1,16 @@
+<div class=".container-fluid mt-6 mx-4" >
+    <h1 class="text-center text-primary mt-5 fw-bold">TODO</h1>
+<div class="row">
+    <!--it occupis the 8 spaces in 12-->
+    <div class="col-8">
+        <div class="form-group">
+            <!-- input for adding task-->
+            <input type="text" class="form-control" id="newTask" [(ngModel)]="todoIn" placeholder="Enter Task" >
+        </div>
+    </div>
+    <!--add button for to add task-->
+    <div class="col-3">
+        <button class="btn btn-success" id="addTask" (click)="addTask()">Add</button>
+    </div>
+</div>
+</div>

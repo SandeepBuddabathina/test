@@ -1,0 +1,15 @@
+<div>
+  <div class="row">
+    <h1 class="text-center text-primary mt-5 fw-bold">TASK LIST</h1>
+    <ul class="list-group col-6 mx-auto">
+      <li class="list-group-item" *ngFor="let todo of todos; let i = index">
+        <!-- Task  -->
+        <span [class.strike]="todo.completed">{{ todo.todoList }}</span>
+        <!-- Delete after the task -->
+        <button class="btn btn-danger right" (click)="deleteTodo(i)">X</button>
+        <!--check box-->
+        <input type="checkbox" (click)="complete(todo)" class="right mt-3 col-2" >
+      </li>
+    </ul>
+  </div>
+</div>
